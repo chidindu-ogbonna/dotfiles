@@ -1,0 +1,350 @@
+# i3 Config
+
+# Terminal
+set $terminal gnome-terminal
+# set $terminal termite
+
+# The modifier key
+set $mod Mod4
+
+font pango:Ubuntu 9
+hide_edge_borders both
+
+# use these keys for focus, movement, and resize directions
+set $up k
+set $down j
+set $left h
+set $right l
+
+# Focus follows the position of the mouse
+focus_follows_mouse no
+# popup_during_fullscreen smart|ignore|leave_fullscreen
+popup_during_fullscreen smart
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# The right button toggles floating
+bindsym button3 floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+i focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed EXIT. This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym $left       resize shrink width 20 px or 20 ppt
+        bindsym $down       resize grow height 20 px or 20 ppt
+        bindsym $up         resize shrink height 20 px or 20 ppt
+        bindsym $right      resize grow width 20 px or 20 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 20 px or 20 ppt
+        bindsym Down        resize grow height 20 px or 20 ppt
+        bindsym Up          resize shrink height 20 px or 20 ppt
+        bindsym Right       resize grow width 20 px or 20 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# set $WS1   "1:Home"
+# set $WS2   "2:Web"
+# set $WS3   "3:Terminal"
+# set $WS4   "4:Code"
+# set $WS5   "5:Reader"
+# set $WS6   "6:Comm."
+# set $WS7   "7:Prod."
+# set $WS8   "8:Office"
+# set $WS9  "9:Music"
+# set $WS10  "10:Video"
+
+# set $WS1 1:  
+# set $WS2 2:   
+# set $WS4 4:  
+# set $WS10 10:   
+set $WS1 1: 🏘
+set $WS2 2:  
+set $WS3 3:  
+set $WS4 4:  ✍
+set $WS5 5:  
+set $WS6 6:  
+set $WS7 7: 🔧
+set $WS8 8: 📝
+set $WS9 9:  🎧
+set $WS10 10: 💻
+# ♐
+
+# i3-gaps settings
+
+for_window [class="^."] border pixel 0
+
+gaps inner 8
+gaps outer 8
+
+smart_gaps on
+smart_borders on
+
+# workspace $WS1 gaps inner 8
+# workspace $WS1 gaps outer 8
+
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+# Assignment to Workspace
+assign [class="Caja"] $WS1
+assign [class="Thunar"] $WS1
+
+# Web
+assign [class="Firefox"] $WS2
+assign [class="Google-chrome"] $WS2
+assign [class="Transmission"] $WS2
+
+# Terminal Workspace
+assign [class="Terminator"] $WS3
+assign [class="Xfce4-terminal"] $WS3
+assign [class="Terminator-Preferences"] $WS3
+assign [class="Gnome-terminal"] $WS3
+assign [class="Alacritty"] $WS3
+assign [class="Termite"] $WS3
+
+# Code Workspace
+assign [class="Code"] $WS4
+assign [class="Sublime_text"] $WS4
+# Code like tools
+assign [class="GitKraken"] $WS4
+
+# Reader Workspace
+assign [class="Okular"] $WS5
+assign [class="Evince"] $WS5
+
+# Communications Workspace
+assign [class="Slack"] $WS6
+assign [class="Skype"] $WS6
+assign [class="zoom"] $WS6
+
+# Productive Workspace
+assign [class="TelegramDesktop"] $WS7
+assign [class="Simplenote"] $WS7
+assign [class="nixnote2"] $WS7
+assign [class="Trello"] $WS7
+
+# LibreOffice suite
+assign [class="libreoffice-writer|libreoffice-draw|libreoffice-presentation|libreoffice-impress|libreoffice-calc"] $WS8
+# WPS office suite
+assign [class="Wpp|Wps|Et"] $WS8
+
+# Music/Video Workspaces
+assign [class="Soundnode"] $WS9
+assign [class="Audacious"] $WS9
+assign [class="Rhythmbox"] $WS9
+assign [class="Xplayer"] $WS10
+assign [class="Totem"] $WS10
+# assign [class="Vlc"] $WS10
+
+# Workspace Bindings
+bindsym $mod+Tab workspace back_and_forth
+bindsym Mod1+Tab exec "rofi -show window -font 'Ubuntu 12' -show-icons"
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
+bindsym $mod+Mod1+h workspace prev
+bindsym $mod+Mod1+Left workspace prev
+bindsym $mod+Mod1+l workspace next
+bindsym $mod+Mod1+Right workspace next
+
+# Bar
+bar {
+  # tray_output primary
+  status_command i3blocks
+  font pango: Ubuntu, FontAwesome 11
+  colors {
+    separator #969896
+    background #1d1f21
+    statusline #c5c8c6
+    focused_workspace #81a2be #81a2be #1d1f21
+    active_workspace #373b41 #373b41 #ffffff
+    inactive_workspace #282a2e #282a2e #969896
+    urgent_workspace #cc6666 #cc6666 #ffffff
+  }
+}
+
+# Startup
+exec_always --no-startup-id nitrogen --restore &
+exec --no-startup-id nm-applet &
+exec --no-startup-id playerctl &
+exec --no-startup-id pulseaudio &
+exec --no-startup-id xfce4-power-manager &
+exec --no-startup-id clipit &
+exec --no-startup-id dunst &
+exec --no-startup-id "xmodmap ~/.Xmodmap"
+exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=3 TapButton3=2 &
+exec --no-startup-id volumeicon
+
+exec --no-startup-id syndaemon -i .5 -K -t -R -d &
+exec --no-startup-id "xset s off"
+exec --no-startup-id xset s off
+# exec xset r rate 250 25
+#
+# exec --no-startup-id /opt/extras.ubuntu.com/calendar-indicator/bin/calendar-indicator
+
+# Bindings
+bindsym $mod+b exec caja
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi drun,run -show combi -modi combi -font 'Ubuntu Mono 16' -padding 10 -hide-scrollbar -show-icons"
+bindsym $mod+Return exec $terminal
+
+# Setting for lock, restart, shut down
+# bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/Wallpapers/programmer.png
+bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/code.png
+bindsym Control+Mod1+s exec "systemctl suspend"
+bindsym Control+Mod1+Delete exec ~/.config/i3/blocks/shutdown_menu
+
+# Capslock/NumLock
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+# Screenshot Controls
+bindsym Print exec xfce4-screenshooter
+
+# Volume Controls
+bindsym XF86AudioRaiseVolume exec "amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks; notify-send 'Volume Up'"
+bindsym XF86AudioLowerVolume exec "amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks; notify-send 'Volume Down'"
+bindsym XF86AudioMute exec "amixer -q -D pulse sset Master toggle && pkill -RTMIN+1; notify-send 'Volume Muted ✖'"
+
+# Music Controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+# Brightnesss Controls
+
+bindsym XF86MonBrightnessUp exec "light -A 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send 'brightness down'"
+
+# Mouse Controls
+bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
+
+# Display Controls
+bindsym XF86Display exec "arandr"
+
+# Changing border style
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
+
+# Applications
+bindsym $mod+q kill
+bindsym $mod+Shift+f exec --no-startup-id exec gnome-system-monitor
+
+# Window titles bold
+for_window [class=".*"] title_format "<b>%title</b>"
+
+# Floating enable
+for_window [class= "Lxappearance"] floating enable
+for_window [class= "Blueberry.py"] floating enable
+for_window [class= "Gnome-system-monitor"] floating enable
+for_window [class="Xfce4-terminal"] floating enable
+# for_window [class="Gnome-terminal"] floating enable
+# for_window [class="termite"] floating enable
+# for_window [class="vlc"] floating enable
+
+
+# Window Role
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="pop-up"] floating enable,move absolute center
+for_window [window_role="task_dialog"] floating enable
+
+# Border Disable
+for_window [class="Firefox"] border none
+for_window [class="Code"] border none
+
+# Colors
+client.focused #81a2be #81a2be #1d1f21 #282a2e
+client.focused_inactive #373b41 #373b41 #969896 #282a2e
+client.unfocused #282a2e #282a2e #969896 #282a2e
+client.urgent #373b41 #cc6666 #ffffff #cc6666
