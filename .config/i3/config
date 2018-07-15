@@ -178,6 +178,7 @@ bindsym $mod+Shift+0 move container to workspace $WS10
 # Assignment to Workspace
 assign [class="Caja"] $WS1
 assign [class="Thunar"] $WS1
+assign [class="Nautilus"] $WS1
 
 # Web
 assign [class="Firefox"] $WS2
@@ -276,8 +277,8 @@ bindsym $mod+d exec --no-startup-id "rofi -combi-modi drun,run -show combi -modi
 bindsym $mod+Return exec $terminal
 
 # Setting for lock, restart, shut down
-# bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/Wallpapers/programmer.png
-bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/code.png
+bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/Wallpapers/panther.png
+# bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/code.png
 bindsym Control+Mod1+s exec "systemctl suspend"
 bindsym Control+Mod1+Delete exec ~/.config/i3/blocks/shutdown_menu
 
