@@ -18,10 +18,16 @@ set termguicolors
 set background=dark
 " set background=light
 
-" colorscheme OceanicNextLight
-colorscheme nord
+" colorscheme nord
 " colorscheme badwolf
 " colorscheme OceanicNext
+" colorscheme solarized8_light
+" colorscheme solarized8_dark
+colorscheme Tomorrow-Night
+" colorscheme carbonized-dark
+" colorscheme dracula
+" colorscheme gotham
+" colorscheme yellow-moon
 
 " set noshowmode
 " set shortmess=acotT
@@ -94,6 +100,8 @@ set ttimeoutlen=100
 
 " Ignore the follwing in vim
 set wildignore+=.git " Version Controls"
+set wildignore+=node_modules/**/ " Fucking node modules
+set wildignore+=node_modules/
 set wildignore+=.DS_Store
 set wildignore+=.vscode " Version Controls"
 set wildignore+=~/.virtualenvs "Exclude python virtual environments.

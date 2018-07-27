@@ -1,8 +1,9 @@
 # i3 Config
 
 # Terminal
-set $terminal gnome-terminal
-# set $terminal termite
+# set $terminal gnome-terminal
+# set $terminal xfce4-terminal
+set $terminal termite
 
 # The modifier key
 set $mod Mod4
@@ -137,12 +138,17 @@ set $WS9 9:  🎧
 set $WS10 10: 💻
 # ♐
 
+
+
+bindsym $mod+Shift+s exec --no-startup-id /home/bones/.bin/monitor.sh
+
+
 # i3-gaps settings
 
 for_window [class="^."] border pixel 0
 
-gaps inner 8
-gaps outer 8
+gaps inner 15
+gaps outer 15
 
 smart_gaps on
 smart_borders on
@@ -196,6 +202,7 @@ assign [class="Termite"] $WS3
 # Code Workspace
 assign [class="Code"] $WS4
 assign [class="Sublime_text"] $WS4
+
 # Code like tools
 assign [class="GitKraken"] $WS4
 
@@ -229,7 +236,7 @@ assign [class="Totem"] $WS10
 
 # Workspace Bindings
 bindsym $mod+Tab workspace back_and_forth
-bindsym Mod1+Tab exec "rofi -show window -font 'Ubuntu 12' -show-icons"
+bindsym Mod1+Tab exec "rofi -show window -font 'Ubuntu Mono 15' -show-icons -hide-scrollbar"
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
 bindsym $mod+Mod1+h workspace prev
 bindsym $mod+Mod1+Left workspace prev
@@ -238,7 +245,7 @@ bindsym $mod+Mod1+Right workspace next
 
 # Bar
 bar {
-  # tray_output primary
+  tray_output primary
   status_command i3blocks
   font pango: Ubuntu, FontAwesome 11
   colors {
@@ -272,13 +279,12 @@ exec --no-startup-id xset s off
 # exec --no-startup-id /opt/extras.ubuntu.com/calendar-indicator/bin/calendar-indicator
 
 # Bindings
-bindsym $mod+b exec caja
+bindsym $mod+b exec nautilus
 bindsym $mod+d exec --no-startup-id "rofi -combi-modi drun,run -show combi -modi combi -font 'Ubuntu Mono 16' -padding 10 -hide-scrollbar -show-icons"
 bindsym $mod+Return exec $terminal
 
 # Setting for lock, restart, shut down
 bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/Wallpapers/panther.png
-# bindsym Control+Mod1+l exec /usr/bin/i3lock -i ~/Pictures/code.png
 bindsym Control+Mod1+s exec "systemctl suspend"
 bindsym Control+Mod1+Delete exec ~/.config/i3/blocks/shutdown_menu
 
@@ -325,13 +331,10 @@ for_window [class=".*"] title_format "<b>%title</b>"
 
 # Floating enable
 for_window [class= "Lxappearance"] floating enable
+for_window [class= "Gpick"] floating enable
 for_window [class= "Blueberry.py"] floating enable
 for_window [class= "Gnome-system-monitor"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
-# for_window [class="Gnome-terminal"] floating enable
-# for_window [class="termite"] floating enable
-# for_window [class="vlc"] floating enable
-
 
 # Window Role
 for_window [window_role="Preferences"] floating enable
