@@ -111,34 +111,17 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# set $WS1   "1:Home"
-# set $WS2   "2:Web"
-# set $WS3   "3:Terminal"
-# set $WS4   "4:Code"
-# set $WS5   "5:Reader"
-# set $WS6   "6:Comm."
-# set $WS7   "7:Prod."
-# set $WS8   "8:Office"
-# set $WS9  "9:Music"
-# set $WS10  "10:Video"
-
-# set $WS1 1:  
-# set $WS2 2:   
-# set $WS4 4:  
-# set $WS10 10:   
-set $WS1 1: 🏘
-set $WS2 2:  
+set $WS1 1:  💻
+set $WS2 2:  🌐
 set $WS3 3:  
-set $WS4 4:  ✍
-set $WS5 5:  
+set $WS4 4:️️ ️ ⚠️
+set $WS5 5:  📖
 set $WS6 6:  
-set $WS7 7: 🔧
-set $WS8 8: 📝
-set $WS9 9:  🎧
-set $WS10 10: 💻
-# ♐
-
-
+set $WS7 7:  🛠
+set $WS8 8:  📝
+set $WS9 9:  🎵
+set $WS10 10:  📹
+# 🎥 ⌛
 
 bindsym $mod+Shift+s exec --no-startup-id /home/bones/.bin/monitor.sh
 
@@ -269,7 +252,8 @@ exec --no-startup-id clipit &
 exec --no-startup-id dunst &
 exec --no-startup-id "xmodmap ~/.Xmodmap"
 exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=3 TapButton3=2 &
-exec --no-startup-id volumeicon
+
+# exec --no-startup-id volumeicon
 
 exec --no-startup-id syndaemon -i .5 -K -t -R -d &
 exec --no-startup-id "xset s off"

@@ -1,4 +1,31 @@
-set $WS1  1:  
+
+# ♐
+
+# ⌛️ ⚒ 🛠 🇳🇬 🎵 🎹 🗑 🕸 📖 📹 🖱🔧  
+
+
+
+# set $WS1   "1:Home"
+# set $WS2   "2:Web"
+# set $WS3   "3:Terminal"
+# set $WS4   "4:Code"
+# set $WS5   "5:Reader"
+# set $WS6   "6:Comm."
+# set $WS7   "7:Prod."
+# set $WS8   "8:Office"
+# set $WS9  "9:Music"
+# set $WS10  "10:Video"
+:at
+📫 🔥 🔕 :batma 🎥 🏁
+
+# set $WS1 1:  
+# set $WS2 2:   
+# set $WS4 4:  
+# set $WS10 10:   
+
+🎭 💠 ⚠️
+
+set $WS1  1: 
 set $WS2  2: 
 set $WS3  3: 
 # set $WS5  5: 
@@ -12,14 +39,31 @@ set $WS9  9: 
 set $WS10 0: 
 set $WS10 10: ♬
 set $WS11 11: 
-set $WS10 0:  
+set $WS10 0: 
 ,
+label=⌚
+# command=echo " `date +'%a %d %b'` - `date +'%H:%M'`"; [[ -z "${BLOCK_BUTTON}" ]] &
+# command=echo "📆 `date +'%a %d %b'` - 🕛 `date +'%H:%M'`"; [[ -z "${BLOCK_BUTTON}" ]] &
+interval=60
+color=#D3DAE3
+
+[trash]
+# label=☝
+label=🗑
+color=#E4E4E4
+interval=10
+
+[shutdown_menu]
+color=#D3DAE3
+full_text=
+# 📆🕛
+
 
  " let g:neomake_typescript_enabled_makers = ['nvim_ts']
   let g:nvim_typescript#kind_symbols = {
       \ 'keyword': 'keyword',
       \ 'class': '',
-      \ 'interface': 
+      \ 'interface':
       \ 'script': 'script',
       \ 'module': '',
       \ 'local class': 'local class',
@@ -50,14 +94,14 @@ set $WS10 0: 
 # set $WS4  4: 
      
     ツ☒ 
-⌘ 
+⌘
 # ┇ ‖ ✪
-# ↔❯ → ▶ │➜ »${cyan}\u${reset_color}@\h 
+# ↔❯ → ▶ │➜ »${cyan}\u${reset_color}@\h
 #
 #
-▸ 
+▸
 
-'⌨ 
+'⌨
 🔔🔍 ⚡
 🔋 🔌
 🔊  🎧 💻 ⚒ 🔧 📝
@@ -77,5 +121,3 @@ set $WS10 0: 
  ✏ ✐ ☑ ☐ ☒ ␟ ␘ ❢ ➟ ➡ ➢ ➣ ➤ ➥ ➦ ➧ ➨ ➚ ➘ ➙ ➛
  ➜ ➝ ➞ ➸ ♐ ➲ ➳ ➳ ➴ ➵ ➶ ➷ ➸ ➹ ➺ ➻ ➼ ➽ ← ↑
 → ↓ ↔ ↕ ↖ ↗ ↘ ↙-H  ✙ ✚ ✛ ✜  -M  -L ✖
-
-
