@@ -42,7 +42,8 @@ set encoding=utf-8
 set modelines=1
 set list
 set listchars=tab:▸-,extends:❯,precedes:❮
-set shell=/bin/bash
+" set shell=/bin/bash
+set shell=/usr/bin/zsh
 set lazyredraw
 set foldenable
 set foldlevelstart=99
